@@ -5,7 +5,7 @@ Configuration Properties
 
 To use this connector, specify the name of the connector class in the ``connector.class`` configuration property.
 
-    connector.class=io.connect.scylladb.ScyllaDbSinkConnector
+    connector.class=com.scylla.db.kafka.ScyllaDbSinkConnector
 
 Connector-specific configuration properties are described below.
 

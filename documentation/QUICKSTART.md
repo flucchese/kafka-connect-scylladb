@@ -84,7 +84,7 @@ $ curl -sS localhost:8083/connector-plugins | jq .[].class | grep ScyllaDbSinkCo
 Your output should resemble:
 
 ```
-"io.connect.scylladb.ScyllaDbSinkConnector"
+"com.scylla.db.kafka.ScyllaDbSinkConnector"
 ```
 
 #####Connector Configuration
@@ -95,7 +95,7 @@ Save these configs in a file *kafka-connect-scylladb.json* and run the following
 {
      "name" : "scylladb-sink-connector",
      "config" : {
-       "connector.class" : "io.connect.scylladb.ScyllaDbSinkConnector",
+       "connector.class" : "com.scylla.db.kafka.ScyllaDbSinkConnector",
        "tasks.max" : "1",
        "topics" : "topic1,topic2,topic3",
        "scylladb.contact.points" : "scylladb-hosts",
@@ -168,7 +168,7 @@ example.
     {
      "name" : "scylladb-sink-connector",
      "config" : {
-       "connector.class" : "io.connect.scylladb.ScyllaDbSinkConnector",
+       "connector.class" : "com.scylla.db.kafka.ScyllaDbSinkConnector",
        "tasks.max" : "1",
        "topics" : "topic1,topic2,topic3",
        "scylladb.contact.points" : "scylladb-hosts",
@@ -195,7 +195,7 @@ confluent local load scylladb-sink-conector -- -d scylladb-sink-connector.proper
 Use the following configs:
 
 ```
-   scylladb.class=io.connect.scylladb.ScyllaDbSinkConnector
+   scylladb.class=com.scylla.db.kafka.ScyllaDbSinkConnector
    tasks.max=1
    topics=topic1,topic2,topic3
    scylladb.contact.points=cassandra
@@ -253,7 +253,7 @@ example.
 {
   "name" : "scylladbSinkConnector",
   "config" : {
-    "connector.class" : "io.connect.scylladb.ScyllaDbSinkConnector",
+    "connector.class" : "com.scylla.db.kafka.ScyllaDbSinkConnector",
     "tasks.max" : "1",
     "topics" : "topic1,topic2,topic3",
     "scylladb.contact.points" : "cassandra",
@@ -270,7 +270,7 @@ example.
 **Standalone Mode**
 
 ```
-connector.class=io.connect.scylladb.ScyllaDbSinkConnector
+connector.class=com.scylla.db.kafka.ScyllaDbSinkConnector
 tasks.max=1
 topics=topic1,topic2,topic3
 scylladb.contact.points=cassandra
